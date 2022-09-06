@@ -1,0 +1,41 @@
+.has-fade{
+  visibility: hidden;
+}
+
+@keyframes ilangg {
+    from {
+      visibility: hidden;
+      opacity: 0;
+    }
+    1%{
+      visibility: visible;
+      opacity: 0;
+    }
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .ilangg{
+    animation: ilangg 200ms ease-in-out forwards;
+  }
+
+@keyframes muncul{
+    from{
+      visibility: visible;
+        opacity: 1;
+    }
+    99%{
+      visibility: visible;
+      opacity: 0;
+    }
+    to{
+      visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.muncul{
+    animation: muncul 200ms ease-in-out forwards;  
+}

@@ -1,0 +1,147 @@
+@use 'mixins' as m;
+@use 'variables' as v;
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+.container{
+    max-width: 69.375rem;
+    margin: 0 auto;
+    &--pall{
+        padding-top : 4.375rem;
+        padding-right:  1.5rem;
+        padding-bottom: 4.375rem;
+        padding-left: 1.5rem;
+        @include m.breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+          }
+    }
+    &--py{
+        padding-top : 4.375rem;
+        padding-bottom: 4.375rem;
+        @include m.breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+          }
+    }
+    &--px{
+        padding-right:  1.5rem;
+        padding-left: 1.5rem;
+    }
+    &--pt{
+        padding-top : 4.375rem;@include m.breakpoint-up(large) {
+            padding-top: 6rem;
+          }
+    }
+    &--pr{
+        padding-right:  1.5rem;
+    }
+    &--pb{
+        padding-bottom: 4.375rem;@include m.breakpoint-up(large) {
+            padding-bottom: 6rem;
+          }
+    }
+    &--pl{
+        padding-left: 1.5rem;
+    }
+}
+    
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    font-size: v.$font-sm ;
+    color: v.$grayishBlue;
+    @include m.breakpoint-up(large){
+        font-size: v.$font-med;
+    }
+    &.nonscroll{
+        overflow: hidden;
+    } 
+}
+
+h1,h2,h3{
+    margin-top: 0;
+    font-weight: 300;
+    font-size:2.3125rem;
+    line-height: 1.15;
+    color: v.$darkBlue;
+}
+
+p{
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
+
+h1{
+    margin-bottom: 1.5rem;
+
+    @include m.breakpoint-up(large){
+        font-size: v.$font-xlr;
+    }
+}
+
+h2{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+
+    @include m.breakpoint-up(large){
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+}
+}
+
+a, a:visited, a:hover{
+    text-decoration: none;
+}
+
+.flex{
+    display: flex;
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+button, .button{
+    display: inline-block;
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, v.$limeGreen, v.$brightCyan);
+    border-radius:50px;
+    border:none; 
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    font-size: v.$font-sm ;  
+    &:hover{
+        opacity: 0.75;
+    }
+
+}
+
+.hide-for-mobile {
+    @include m.breakpoint-down(medium) {
+      display: none;
+    }
+  }
+  
+  .hide-for-desktop {
+    @include m.breakpoint-up(large) {
+      display: none;
+    }
+  }

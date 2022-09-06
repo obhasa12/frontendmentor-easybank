@@ -1,0 +1,81 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+.hero{ // Container for Image and Text
+    background-color: v.$veryuLightGray;
+    .container{
+        @include m.breakpoint-up(large){
+            display: flex;
+            align-items: center;
+         }
+        }
+    &__image{ // For mobile image
+        // border: 1px solid salmon;
+        position: relative;
+        background-image: url(/images/bg-intro-mobile.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+        @include m.breakpoint-up(medium){
+            min-height: 24rem;
+            background-position: center 60%;
+        }
+        @include m.breakpoint-up(large){
+            flex: 3;
+            order: 2;
+            height: 41rem;
+            //background-image: url(/images/bg-intro-desktop.svg);
+            background-image: none;
+        }
+        &::before, &::after{
+            // border:solid 1px magenta;
+        }
+        &::after{
+            content: " ";
+            position: absolute;
+            background-image: url(/images/image-mockups.png);
+            height: 100%;
+            width: 100%;
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            @include m.breakpoint-up(medium){
+                background-size: 52%;
+            }
+            @include m.breakpoint-up(large){
+                width: 120%;
+                height: 122%;
+                background-size: 94%;
+                background-position: center 150%;
+                left: 22%;
+
+            }
+        }
+        &::before{
+            @include m.breakpoint-up(large){
+                content: " ";
+                position: absolute;
+                background-image: url(/images/bg-intro-desktop.svg);
+                height: 100%;
+                // background-size: 93%;
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
+            }
+        }
+    }
+    &__text{
+        text-align: center;
+        @include m.breakpoint-up(large){
+            flex: 2;
+            order: 1;
+            text-align: left;
+
+        }
+
+        }
+    
+
+    }
