@@ -68,6 +68,7 @@ body {
   line-height: 1.4;
   font-size: 0.875rem;
   color: hsl(233deg, 8%, 62%);
+  overflow-x: hidden;
 }
 @media (min-width: 64em) {
   body {
@@ -508,4 +509,74 @@ button:hover, .button:hover {
 }
 .article__description {
   font-size: 0.8125rem;
+}
+
+.footer {
+  background-color: hsl(233deg, 26%, 24%);
+  color: hsl(0deg, 0%, 100%);
+  padding: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "logo links1 links2 cta" "social links1 links2 cta";
+  }
+}
+.footer a {
+  color: hsl(0deg, 0%, 100%);
+}
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64em) {
+  .footer__logo {
+    grid-area: logo;
+  }
+}
+.footer__social {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64em) {
+  .footer__social {
+    grid-area: social;
+  }
+}
+.footer__social a {
+  display: inline-block;
+}
+.footer__social :not(:last-child) {
+  margin-right: 1rem;
+}
+.footer__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 64em) {
+  .footer__link.col1 {
+    grid-area: links1;
+  }
+}
+.footer__link.col2 {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64em) {
+  .footer__link.col2 {
+    grid-area: links2;
+  }
+}
+.footer__link a {
+  line-height: 2.25;
+}
+@media (min-width: 64em) {
+  .footer__cta {
+    grid-area: cta;
+  }
+}
+.footer__cta a.button {
+  margin-bottom: 1.875rem;
 }/*# sourceMappingURL=style.css.map */

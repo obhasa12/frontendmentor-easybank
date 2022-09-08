@@ -61,6 +61,8 @@ body{
     line-height: 1.4;
     font-size: v.$font-sm ;
     color: v.$grayishBlue;
+    overflow-x: hidden;
+
     @include m.breakpoint-up(large){
         font-size: v.$font-med;
     }
