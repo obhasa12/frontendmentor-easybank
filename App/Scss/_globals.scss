@@ -125,16 +125,18 @@ button, .button{
     display: inline-block;
     padding: 0.875rem 2.1875rem;
     background-image: linear-gradient(to right, v.$limeGreen, v.$brightCyan);
+    cursor: pointer;
     border-radius:50px;
-    border:none; 
+    border: 0; 
     font-weight: 700;
     color: white;
+    overflow: hidden;
     cursor: pointer;
     font-size: v.$font-sm ;  
     &::before{
         content: "";
         position: absolute;
-        top:0;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
